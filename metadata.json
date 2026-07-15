@@ -1,0 +1,6 @@
+{
+  "name": "SeeMe",
+  "description": "Analyze images and estimate whether they are AI-generated or authentic using an intelligent visual detection system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
