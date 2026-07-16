@@ -1,27 +1,32 @@
 import { motion } from "motion/react";
-import { Shield, Sparkles, Binary, Image as ImageIcon, Cpu, FileCheck } from "lucide-react";
+import { Shield, Sparkles, Binary, Image as ImageIcon, Cpu, FileCheck, FileText, Activity } from "lucide-react";
 
 export default function AboutView() {
   const steps = [
     {
-      icon: <Binary className="h-4 w-4 text-[#111111] dark:text-neutral-50" />,
-      title: "Frequency & Noise Forensics",
-      description: "Traditional cameras record photos with a natural sensor noise distribution. Diffusion models leave artificial micro-textures and flat frequency spectra that are distinguishable from genuine camera grain.",
-    },
-    {
-      icon: <ImageIcon className="h-4 w-4 text-[#111111] dark:text-neutral-50" />,
-      title: "Lighting & Ray Geometry",
-      description: "Generative networks approximate ray tracing but frequently fail to resolve complex lighting bounces, secondary reflections, and shadow projections logically, revealing structural inconsistencies.",
+      icon: <FileCheck className="h-4 w-4 text-[#111111] dark:text-neutral-50" />,
+      title: "Metadata Analyzer",
+      description: "Menganalisis profil EXIF, skema warna, penanda kompresi, serta metadata manufaktur kamera fisik yang biasanya hilang atau terhapus pada hasil gambar rekayasa model AI generatif.",
     },
     {
       icon: <Cpu className="h-4 w-4 text-[#111111] dark:text-neutral-50" />,
-      title: "Anatomical & Edge Artifacts",
-      description: "Modern diffusion model textures may look clean, but edge boundaries show unnatural blurring, inconsistent sharpening filters, and structural abnormalities (e.g. morphing hand structures or inconsistent iris boundaries).",
+      title: "SDXL Detector",
+      description: "Mendeteksi secara mendalam pola noise struktural dan artefak mikro-tekstur generatif spesifik yang sering ditinggalkan oleh arsitektur difusi modern seperti Stable Diffusion XL (SDXL).",
     },
     {
-      icon: <FileCheck className="h-4 w-4 text-[#111111] dark:text-neutral-50" />,
-      title: "Metadata & Tag Validation",
-      description: "Real images contain extensive camera profile headers, color space curves, and lens metrics. AI generative outputs are almost completely devoid of standard camera profiles unless intentionally injected.",
+      icon: <Binary className="h-4 w-4 text-[#111111] dark:text-neutral-50" />,
+      title: "Frequency Analysis",
+      description: "Mengisolasi spektrum anomali frekuensi tinggi pada tingkat piksel untuk mengidentifikasi pola pengulangan noise, ketidakwajaran gradasi, dan penghalusan permukaan sintetis.",
+    },
+    {
+      icon: <Activity className="h-4 w-4 text-[#111111] dark:text-neutral-50" />,
+      title: "Compression Analysis",
+      description: "Mengevaluasi pola kompresi matriks Discrete Cosine Transform (DCT) pada format gambar guna menguji keaslian kompresi kamera asli atau indikator pengompresan ganda oleh model saraf.",
+    },
+    {
+      icon: <Sparkles className="h-4 w-4 text-[#111111] dark:text-neutral-50" />,
+      title: "Gemini Vision",
+      description: "Memanfaatkan kemampuan kognisi model visual Gemini untuk memeriksa kejanggalan semantik seperti distorsi anatomi fisik, pencahayaan bayangan abnormal, dan inkonsistensi geometri optik.",
     },
   ];
 
@@ -35,13 +40,13 @@ export default function AboutView() {
       {/* Editorial Header */}
       <div className="text-center max-w-2xl mx-auto mb-16">
         <span className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-500 block mb-2">
-          Forensic Methodology
+          Metode Analisis
         </span>
         <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] dark:text-white tracking-tight mb-4">
-          How SeeMe Analyzes Images
+          Cara Kerja SeeMe
         </h2>
         <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed text-xs sm:text-sm">
-          SeeMe leverages visual forensical indicators to identify artificial pixel layouts, synthetic smoothing, and texture artifacts commonly found in diffusion and generative models.
+          SeeMe menganalisis berbagai indikator visual untuk mengidentifikasi struktur piksel buatan, penghalusan sintetik, dan artefak tekstur yang sering ditemukan pada model difusi dan AI generatif.
         </p>
       </div>
 
@@ -76,10 +81,10 @@ export default function AboutView() {
         <div>
           <h4 className="font-bold text-neutral-950 dark:text-neutral-50 uppercase tracking-widest text-[10px] mb-1.5 flex items-center gap-1.5">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>Integrity Charter</span>
+            <span>Integritas Sistem</span>
           </h4>
           <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
-            SeeMe's goal is to aid digital verification and restore media transparency. However, as generative model architectures evolve, predictions are probabilistic forensic estimations and should not be used as an absolute replacement for careful journalism and expert peer-review.
+            SeeMe bertujuan untuk mendukung verifikasi digital dan mengembalikan transparansi media. Namun, seiring berkembangnya arsitektur model AI, hasil prediksi bersifat estimasi probabilistik dan tidak boleh menggantikan peran jurnalisme serta tinjauan oleh ahli.
           </p>
         </div>
       </div>

@@ -13,7 +13,7 @@ export interface TechnicalDetails {
   fileSize: string;
   fileType: string;
   estimatedNoise: string;
-  metadataFound: "Yes" | "No";
+  metadataFound: "Ya" | "Tidak";
 }
 
 export interface HistoryItem {

@@ -1,6 +1,7 @@
 import { Menu, X, Sun, Moon, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { ActiveTab } from "../types";
+import LogoIcon from "../Image/Logo.svg";
 
 interface NavbarProps {
   activeTab: ActiveTab;
@@ -13,10 +14,10 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: "home" as ActiveTab, label: "Home" },
-    { id: "analyze" as ActiveTab, label: "Analyze" },
-    { id: "history" as ActiveTab, label: "History" },
-    { id: "about" as ActiveTab, label: "About" },
+    { id: "home" as ActiveTab, label: "Utama" },
+    { id: "analyze" as ActiveTab, label: "Analisis" },
+    { id: "history" as ActiveTab, label: "Riwayat" },
+    { id: "about" as ActiveTab, label: "Tentang" },
   ];
 
   return (
@@ -30,15 +31,17 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode 
               onClick={() => setActiveTab("home")}
               className="flex items-center gap-2.5 group text-left focus:outline-none"
             >
-              <div className="w-6 h-6 bg-[#111111] dark:bg-white rounded-sm flex items-center justify-center transition-all group-hover:scale-105 duration-300">
-                <div className="w-2.5 h-2.5 bg-white dark:bg-[#111111] rounded-sm" />
-              </div>
+              <img
+                src={LogoIcon}
+                alt="SeeMe Logo"
+                className="w-13 h-13 object-contain transition-all group-hover:scale-105 duration-300"
+              />
               <div>
                 <span className="block font-bold text-lg tracking-tight text-[#111111] dark:text-white leading-none">
                   SeeMe
                 </span>
                 <span className="block text-[9px] uppercase tracking-widest text-[#404040] dark:text-neutral-400 mt-1">
-                  See Beyond the Image
+                  Melihat Lebih Jauh
                 </span>
               </div>
             </button>

@@ -25,8 +25,8 @@ import ToastContainer from "./components/ToastContainer";
 import { ActiveTab, HistoryItem, ToastMessage, DetectionResult } from "./types";
 
 // Standard sample image URLs for immediate testing
-const SAMPLE_HUMAN_IMAGE = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/402px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg";
-const SAMPLE_AI_IMAGE = "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=500&q=80";
+const SAMPLE_HUMAN_IMAGE = "./src/image/lombok.jpeg";
+const SAMPLE_AI_IMAGE = "./src/image/Pantai_Gemini.jpg";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>("home");
@@ -223,7 +223,7 @@ export default function App() {
     if (type === "ai") {
       const payload = {
         base64: SAMPLE_AI_IMAGE,
-        fileName: "Image-2 (Mona Lisa - AI)",
+        fileName: "Image-2 (Pantai - AI)",
         fileSize: "1.2 MB",
         fileType: "JPEG",
         resolution: "1024 × 1024 px",
@@ -235,13 +235,13 @@ export default function App() {
         human_probability: 0.04,
         confidence: 0.95,
         status: "Likely AI Generated",
-        analysis: "Terdeteksi pola interferensi frekuensi tinggi dan penghalusan tekstur sintetis khas algoritma difusi modern. Struktur pencahayaan sekunder dan bayangan pada detail mata tidak konsisten secara optik dengan subjek utama, menunjukkan indikator kuat rekayasa generatif neural.",
+        analysis: "Terdeteksi pola interferensi frekuensi tinggi dan penghalusan tekstur sintetis khas algoritma difusi modern. Struktur pencahayaan sekunder dan bayangan pada detail kontur perbukitan serta siluet manusia di pesisir tidak konsisten secara optik dengan arah datangnya cahaya matahari, menunjukkan indikator kuat rekayasa generatif neural.",
         indicators: ["Pola Difusi Frekuensi", "Anomali Pencahayaan", "Penghalusan Tekstur"],
       });
     } else {
       const payload = {
         base64: SAMPLE_HUMAN_IMAGE,
-        fileName: "Image-1 (Mona Lisa - Asli)",
+        fileName: "Image-1 (Lombok)",
         fileSize: "4.5 MB",
         fileType: "JPEG",
         resolution: "402 × 600 px",
@@ -253,8 +253,8 @@ export default function App() {
         human_probability: 0.99,
         confidence: 0.98,
         status: "Likely Authentic",
-        analysis: "Karakteristik sapuan kuas asli Leonardo da Vinci terverifikasi secara forensik. Pola retakan cat alami (craquelure) dan distribusi pigmen fisik menunjukkan karakteristik lukisan minyak klasik otentik dari abad ke-16, bebas dari pola noise generatif.",
-        indicators: ["Pola Craquelure", "Analisis Pigmen", "Konsistensi Tekstur Fisik"],
+        analysis: "Karakteristik tekstur batuan koral yang tajam dan formasinya di tengah laut, yang terlihat di Lombok.jpeg, telah terverifikasi secara forensik. Pola bayangan alami dan distribusi piksel fisik menunjukkan karakteristik foto otentik, bebas dari artefak atau pola noise generatif.",
+        indicators: ["Pola tekstur batuan koral yang tajam", "Karakteristik foto otentik"],
       });
     }
     setActiveTab("analyze");
@@ -290,18 +290,18 @@ export default function App() {
                 <div className="space-y-6 text-left">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-[#F5F5F5] dark:bg-neutral-900 text-[#111111] dark:text-neutral-200 border border-[#D4D4D4] dark:border-neutral-800">
                     <Shield className="h-3.5 w-3.5" />
-                    <span>Visual Image Forensics</span>
+                    <span>Analisis Gambar</span>
                   </div>
                   <div>
                     <h1 className="text-6xl font-black uppercase tracking-tight text-[#111111] dark:text-white leading-none">
                       SeeMe.
                     </h1>
                     <p className="text-xs uppercase tracking-widest text-[#404040] dark:text-neutral-400 font-bold mt-2">
-                      See Beyond the Image
+                      Melihat Lebih Jauh
                     </p>
                   </div>
                   <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400 max-w-md">
-                    SeeMe is an AI-powered forensic platform capable of detecting whether an image is synthetic or authentic through frequency, lighting, and edge noise analysis.
+                    SeeMe merupakan website pendeteksi keaslian sebuah gambar. Tugas utama SeeMe adalah memastikan bahwa gambar yang diunggah bukan dibuat atau diedit oleh Artificial Intelegence.
                   </p>
                   <div className="pt-2 flex flex-wrap gap-4">
                     <button
@@ -311,14 +311,14 @@ export default function App() {
                       }}
                       className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#111111] hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black text-xs font-bold uppercase tracking-widest rounded transition-all duration-300 shadow-sm"
                     >
-                      <span>Analyze Image</span>
+                      <span>Analisis Gambar</span>
                       <ArrowRight className="h-4.5 w-4.5" />
                     </button>
                     <button
                       onClick={() => setActiveTab("about")}
                       className="inline-flex items-center gap-2 px-6 py-3.5 border border-[#D4D4D4] dark:border-neutral-800 bg-white dark:bg-neutral-900 text-[#111111] dark:text-neutral-100 text-xs font-bold uppercase tracking-widest rounded hover:bg-[#F5F5F5] dark:hover:bg-neutral-850/50 transition-colors"
                     >
-                      <span>Methodology</span>
+                      <span>Metodologi</span>
                     </button>
                   </div>
                 </div>
@@ -330,7 +330,7 @@ export default function App() {
                   <div className="flex items-center justify-between border-b border-[#D4D4D4] dark:border-neutral-900 pb-4 mb-4">
                     <div className="flex items-center gap-2">
                       <div className="h-2 w-2 rounded-full bg-[#111111] dark:bg-white animate-pulse" />
-                      <span className="text-[10px] font-mono font-bold text-[#404040]">SIGNATURE_ANALYSIS_STAGE</span>
+                      <span className="text-[10px] font-mono font-bold text-[#404040]">ANALYSIS_STAGE_1</span>
                     </div>
                     <span className="text-[9px] font-bold px-2 py-0.5 rounded border border-[#D4D4D4] bg-white dark:bg-neutral-900 font-mono">MVP v1.0</span>
                   </div>
@@ -339,20 +339,20 @@ export default function App() {
                   <div className="flex justify-around items-center py-6 gap-4">
                     <div className="flex flex-col items-center">
                       <div className="h-16 w-16 rounded bg-white dark:bg-neutral-900 border border-[#D4D4D4] flex items-center justify-center shadow-sm">
-                        <span className="text-xs font-mono font-bold">AI_SIG</span>
+                        <span className="text-xs font-mono font-bold">GEMINI</span>
                       </div>
-                      <span className="text-[9px] text-[#404040] font-bold uppercase tracking-wider mt-2">Neural Residue</span>
+                      <span className="text-[9px] text-[#404040] font-bold uppercase tracking-wider mt-2">Gemini Vision</span>
                     </div>
                     <div className="flex flex-col items-center">
                       <div className="h-16 w-16 rounded bg-white dark:bg-neutral-900 border border-dashed border-[#D4D4D4] flex items-center justify-center">
-                        <span className="text-xs font-mono font-bold text-neutral-400">RAW_SIG</span>
+                        <span className="text-xs font-mono font-bold text-neutral-400">METADATA</span>
                       </div>
-                      <span className="text-[9px] text-[#404040] font-bold uppercase tracking-wider mt-2">Camera Lens</span>
+                      <span className="text-[9px] text-[#404040] font-bold uppercase tracking-wider mt-2">Analisis Metadata</span>
                     </div>
                   </div>
 
                   <p className="text-[10px] leading-relaxed text-[#404040] dark:text-neutral-500 font-mono bg-white dark:bg-neutral-900/50 p-4 rounded border border-[#D4D4D4] dark:border-neutral-900 mt-4 uppercase tracking-wider">
-                    SeeMe scans micro-textures and compression noise models dynamically to detect generative pixel distributions.
+                    SeeMe menggunakan Gemini Vision untuk mendeteksi keaslian gambar berdasarkan anomali pada pencahayaan dan ketidakkonsistenan pada piksel gambar.
                   </p>
                 </div>
               </div>
@@ -361,10 +361,10 @@ export default function App() {
               <div className="border-t border-[#D4D4D4] dark:border-neutral-850 pt-16">
                 <div className="text-left max-w-xl mb-10">
                   <h3 className="text-lg font-bold uppercase tracking-wider text-[#111111] dark:text-white">
-                    Playground Demonstration
+                    Demonstrasi SeeMe
                   </h3>
                   <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1.5 leading-relaxed">
-                    Don't have an image on hand? Click on one of the sample dataset files below to explore the detailed forensic reports instantly.
+                    Tidak memiliki file gambar untuk uji coba? Klik salah satu contoh gambar di bawah ini untuk melihat simulasi laporan analisis secara instan.
                   </p>
                 </div>
 
@@ -377,16 +377,16 @@ export default function App() {
                     <div className="aspect-video w-full bg-neutral-100 flex items-center justify-center relative overflow-hidden">
                       <img src={SAMPLE_HUMAN_IMAGE} alt="Image-1 (Asli)" className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" />
                       <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur text-neutral-900 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider rounded-sm border border-neutral-200">
-                        Authentic Specimen
+                        Gambar Asli
                       </div>
                     </div>
                     <div className="p-5 flex items-center justify-between">
                       <div>
                         <h4 className="font-bold text-[#111111] dark:text-neutral-100 text-xs uppercase tracking-wider">
-                          Image-1 (Mona Lisa - Asli)
+                          Image-1 (Lombok - Real)
                         </h4>
                         <p className="text-[10px] text-neutral-400 dark:text-neutral-500 mt-1 font-mono uppercase tracking-wider">
-                          98.8% Human Authentic Prob. | 98% Confidence
+                          98.8% Kemungkinan Gambar Asli 
                         </p>
                       </div>
                       <span className="p-2 bg-neutral-50 dark:bg-neutral-900 rounded border border-[#D4D4D4] dark:border-neutral-800 group-hover:bg-[#111111] group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-neutral-950 transition-all duration-300">
@@ -403,16 +403,16 @@ export default function App() {
                     <div className="aspect-video w-full bg-neutral-900 flex items-center justify-center relative overflow-hidden">
                       <img src={SAMPLE_AI_IMAGE} alt="Image-2 (AI)" className="w-full h-full object-cover opacity-80 group-hover:scale-102 transition-transform duration-500" />
                       <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur text-white px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider rounded-sm">
-                        Neural Specimen
+                        Gambar Uji Coba
                       </div>
                     </div>
                     <div className="p-5 flex items-center justify-between">
                       <div>
                         <h4 className="font-bold text-[#111111] dark:text-neutral-100 text-xs uppercase tracking-wider">
-                          Image-2 (Mona Lisa - AI)
+                          Image-2 (Pantai - AI)
                         </h4>
                         <p className="text-[10px] text-neutral-400 dark:text-neutral-500 mt-1 font-mono uppercase tracking-wider">
-                          96.4% AI Generated Prob. | 95% Confidence
+                          96.4% Kemungkinan Gambar AI 
                         </p>
                       </div>
                       <span className="p-2 bg-neutral-50 dark:bg-neutral-900 rounded border border-[#D4D4D4] dark:border-neutral-800 group-hover:bg-[#111111] group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-neutral-950 transition-all duration-300">
@@ -456,13 +456,13 @@ export default function App() {
                       {/* Active Upload Box */}
                       <div className="text-left max-w-xl">
                         <span className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-500 block mb-1">
-                          Interactive Lab
+                          Deteksi Gambar Anda
                         </span>
                         <h2 className="text-2xl font-bold text-[#111111] dark:text-white uppercase tracking-tight">
-                          Forensic Image Upload
+                          Unggah Gambar
                         </h2>
                         <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1.5 leading-relaxed">
-                          Provide any JPG, PNG or WEBP file up to 20MB. Your image will undergo micro-texture inspection to determine synthetic probability.
+                          Gunakan file gambar berformat JPG, PNG, atau WEBP hingga 20MB. Gambar Anda akan melalui pemeriksaan mikrotekstur dan metadata untuk mendeteksi tanda rekayasa AI.
                         </p>
                       </div>
 
@@ -505,13 +505,13 @@ export default function App() {
                             onClick={handleReset}
                             className="px-5 py-2.5 border border-[#D4D4D4] dark:border-neutral-800 text-[#111111] dark:text-neutral-200 text-xs font-bold uppercase tracking-widest rounded hover:bg-[#F5F5F5] dark:hover:bg-neutral-900 transition-colors"
                           >
-                            Reset Specimen
+                            Ubah Gambar
                           </button>
                           <button
                             onClick={handleAnalyze}
                             className="px-6 py-2.5 bg-[#111111] hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black text-xs font-bold uppercase tracking-widest rounded transition-all hover:y-[-1px] shadow"
                           >
-                            Analyze Specimen
+                            Analisis Gambar
                           </button>
                         </div>
                       )}
@@ -544,13 +544,13 @@ export default function App() {
             >
               <div className="mb-6">
                 <span className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-500 block mb-1">
-                  Saved Records
+                  Riwayat Analisis Gambar
                 </span>
                 <h2 className="text-2xl font-bold text-[#111111] dark:text-white uppercase tracking-tight">
-                  Visual Forensic Vault
+                  Seluruh Riwayat Analisis
                 </h2>
                 <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1.5 leading-relaxed">
-                  Manage your previously scanned specimens. Clicking an item will reload its full reporting metrics into the visual lab.
+                  Kelola hasil analisis gambar yang tersimpan. Klik pada item untuk melihat kembali metrik laporan lengkapnya di lab visual.
                 </p>
               </div>
 

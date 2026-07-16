@@ -216,25 +216,25 @@ export default function UploadBox({ onImageSelected, isLoading }: UploadBoxProps
           {/* Image specs summary */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 p-4 rounded-lg bg-[#F8F8F8] dark:bg-neutral-900/50 border border-[#D4D4D4] dark:border-neutral-900 text-[10px] font-mono uppercase tracking-wider">
             <div>
-              <span className="block text-[#404040] dark:text-neutral-500 mb-0.5">Filename</span>
+              <span className="block text-[#404040] dark:text-neutral-500 mb-0.5">Nama File</span>
               <span className="font-bold text-[#111111] dark:text-neutral-100 truncate block" title={selectedFile.fileName}>
                 {selectedFile.fileName}
               </span>
             </div>
             <div>
-              <span className="block text-[#404040] dark:text-neutral-500 mb-0.5">File Size</span>
+              <span className="block text-[#404040] dark:text-neutral-500 mb-0.5">Ukuran File</span>
               <span className="font-bold text-[#111111] dark:text-neutral-100">
                 {selectedFile.fileSize}
               </span>
             </div>
             <div>
-              <span className="block text-[#404040] dark:text-neutral-500 mb-0.5">Resolution</span>
+              <span className="block text-[#404040] dark:text-neutral-500 mb-0.5">Resolusi</span>
               <span className="font-bold text-[#111111] dark:text-neutral-100">
                 {selectedFile.resolution}
               </span>
             </div>
             <div>
-              <span className="block text-[#404040] dark:text-neutral-500 mb-0.5">Aspect Ratio</span>
+              <span className="block text-[#404040] dark:text-neutral-500 mb-0.5">Rasio Aspek</span>
               <span className="font-bold text-[#111111] dark:text-neutral-100">
                 {selectedFile.aspectRatio}
               </span>
@@ -245,8 +245,8 @@ export default function UploadBox({ onImageSelected, isLoading }: UploadBoxProps
           <div className="flex items-start gap-3 p-4 rounded bg-[#111111] text-white text-xs dark:bg-neutral-900 border dark:border-neutral-800">
             <ShieldCheck className="h-5 w-5 text-white/80 shrink-0 mt-0.5" />
             <div>
-              <p className="font-bold uppercase tracking-widest text-[10px] mb-1 opacity-60">Secure Local Sandbox</p>
-              <p className="leading-relaxed opacity-95 text-[11px]">This metadata calculation is executed inside your client browser sandbox securely. Ready for forensic analysis.</p>
+              <p className="font-bold uppercase tracking-widest text-[10px] mb-1 opacity-60">Tersimpan Secara Lokal</p>
+              <p className="leading-relaxed opacity-95 text-[11px]">metadata ini dijalankan secara aman di dalam browser klien Anda. Siap untuk analisis forensik.</p>
             </div>
           </div>
         </motion.div>

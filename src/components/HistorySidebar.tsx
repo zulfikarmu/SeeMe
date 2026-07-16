@@ -38,7 +38,7 @@ export default function HistorySidebar({
         <div className="flex items-center gap-2">
           <History className="h-4.5 w-4.5 text-[#111111] dark:text-neutral-200" />
           <h3 className="font-bold text-sm tracking-tight text-[#111111] dark:text-neutral-50 uppercase">
-            Recent History
+            Riwayat Analisis
           </h3>
         </div>
         
@@ -48,7 +48,7 @@ export default function HistorySidebar({
             className="flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#404040] hover:text-[#111111] dark:text-neutral-400 dark:hover:text-white transition-colors border border-[#D4D4D4] hover:bg-neutral-50 dark:border-neutral-800 rounded shadow-sm bg-white dark:bg-neutral-900"
           >
             <Trash2 className="h-3 w-3" />
-            <span>Clear All</span>
+            <span>Hapus Semua</span>
           </button>
         )}
       </div>
@@ -61,10 +61,10 @@ export default function HistorySidebar({
               <History className="h-5 w-5 text-neutral-400" />
             </div>
             <h4 className="text-[10px] font-bold text-[#404040] dark:text-neutral-350 uppercase tracking-widest mb-1">
-              History Empty
+              Tidak Ada Riwayat
             </h4>
             <p className="text-xs text-neutral-400 dark:text-neutral-500 max-w-[180px] leading-relaxed">
-              Analyze an image to preserve your visual logs.
+              Analisis gambar untuk melihat riwayat Anda.
             </p>
           </div>
         ) : (

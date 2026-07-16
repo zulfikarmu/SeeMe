@@ -45,22 +45,22 @@ export default function AnalysisDashboard({
 
   if (ai_probability > 0.6) {
     badgeStyles = "bg-black text-white border-black dark:bg-white dark:text-black dark:border-white";
-    statusText = "Likely AI Generated";
+    statusText = "Terdeteksi AI";
   } else if (human_probability > 0.6) {
     badgeStyles = "bg-white text-black border-black dark:bg-neutral-900 dark:text-white dark:border-neutral-700";
-    statusText = "Likely Authentic";
+    statusText = "Sangat Otentik";
   } else {
     badgeStyles = "bg-neutral-200 text-neutral-900 border-neutral-400 dark:bg-neutral-800 dark:text-neutral-200 dark:border-neutral-600";
-    statusText = "Uncertain";
+    statusText = "Tidak Pasti";
   }
 
   // All possible indicators we want to show, and tick those present in response
   const possibleIndicators = [
-    { key: "Texture Consistency", label: "Texture Consistency Check" },
-    { key: "Lighting Pattern", label: "Lighting Geometry & Shadow Analysis" },
-    { key: "Facial Artifact", label: "Facial / Anatomical Artifact Detector" },
-    { key: "Compression Pattern", label: "Digital Compression Signature Evaluation" },
-    { key: "Metadata", label: "Camera Profile & EXIF Metadata Inspection" },
+    { key: "Metadata Analyzer", label: "Metadata Analyzer" },
+    { key: "SDXL Detector", label: "SDXL Detector" },
+    { key: "Frequency Analysis", label: "Frequency Analysis" },
+    { key: "Compression Analysis", label: "Compression Analysis" },
+    { key: "Gemini Vision", label: "Gemini Vision" },
   ];
 
   // Technical info
@@ -69,17 +69,17 @@ export default function AnalysisDashboard({
     aspectRatio,
     fileSize,
     fileType,
-    estimatedNoise: ai_probability > 0.6 ? "0.0031 RMS (Unnaturally Flat)" : "0.0142 RMS (Standard Sensor Grain)",
-    metadataFound: ai_probability > 0.6 ? "No" : "Yes",
+    estimatedNoise: ai_probability > 0.6 ? "0.0031 RMS (Sangat Datar)" : "0.0142 RMS (Standar Sensor)",
+    metadataFound: ai_probability > 0.6 ? "Tidak" : "Ya",  
   };
 
   const getRecommendation = () => {
     if (ai_probability > 0.6) {
-      return "This image contains significant structural signatures corresponding to diffusion pipelines. Avoid using this image as primary authentic source material or legal evidence without thorough manual inspection.";
+      return "Gambar ini mengandung tanda struktural signifikan yang sesuai dengan algoritma model difusi generatif. Hindari menggunakan gambar ini sebagai dokumen sumber otentik atau bukti legal tanpa pemeriksaan manual yang menyeluruh.";
     } else if (human_probability > 0.6) {
-      return "Forensic evaluation indicates high structural integrity matching typical physical capture workflows. The pixel grain corresponds perfectly with traditional optical camera sensors.";
+      return "Evaluasi menunjukkan integritas struktural tinggi yang cocok dengan alur kerja pengambilan foto fisik biasa. Pola butiran piksel sangat sesuai dengan karakteristik sensor kamera optik tradisional.";
     } else {
-      return "Forensic evaluation remains inconclusive. It is recommended to contact the author or check original EXIF tags to verify source validity before publishing as verified factual media.";
+      return "Evaluasi tidak meyakinkan. Disarankan untuk memverifikasi ke pembuat gambar atau memeriksa tag EXIF asli untuk memastikan validitas sebelum dipublikasikan sebagai media informasi yang faktual.";
     }
   };
 
@@ -98,10 +98,10 @@ export default function AnalysisDashboard({
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 print:hidden">
         <div>
           <span className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-500 block mb-1">
-            Forensic Report
+            Laporan Analisis  
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] dark:text-neutral-50 tracking-tight">
-            Analysis Results
+            Hasil Analisis
           </h2>
         </div>
         <div className="flex flex-wrap gap-3">
@@ -110,14 +110,14 @@ export default function AnalysisDashboard({
             className="flex items-center gap-2 px-4 py-2 border border-[#D4D4D4] hover:bg-[#F5F5F5] dark:border-neutral-800 dark:hover:bg-neutral-900 bg-white dark:bg-neutral-950 text-[#111111] dark:text-neutral-50 text-xs font-medium uppercase tracking-wider rounded transition-all duration-200"
           >
             <Printer className="h-3.5 w-3.5" />
-            <span>Export Report (PDF)</span>
+            <span>Ekspor Laporan (PDF)</span>
           </button>
           <button
             onClick={onReset}
             className="flex items-center gap-2 px-4 py-2 bg-[#111111] hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black text-xs font-bold uppercase tracking-widest rounded transition-all duration-200"
           >
             <RotateCcw className="h-3.5 w-3.5" />
-            <span>Analyze Another</span>
+            <span>Ulangi Analisis</span>
           </button>
         </div>
       </div>
@@ -128,12 +128,12 @@ export default function AnalysisDashboard({
         {/* Printable Report Header */}
         <div className="hidden print:flex justify-between items-center border-b border-[#D4D4D4] pb-6 mb-8">
           <div>
-            <h1 className="text-2xl font-bold text-neutral-950">SeeMe Visual Forensics</h1>
-            <p className="text-xs text-neutral-500 font-mono">Forensic Signature Verification Report</p>
+            <h1 className="text-2xl font-bold text-neutral-950">SeeMe Pendeteksi Gambar</h1>
+            <p className="text-xs text-neutral-500 font-mono">Laporan Hasil Analisis Gambar</p>
           </div>
           <div className="text-right text-xs text-neutral-500">
-            <p>Report Date: {new Date().toLocaleDateString()}</p>
-            <p>File Target: {fileName}</p>
+            <p>Tanggal Laporan: {new Date().toLocaleDateString()}</p>
+            <p>Tujuan File: {fileName}</p>
           </div>
         </div>
 
@@ -187,7 +187,7 @@ export default function AnalysisDashboard({
               {/* Confidence Bar */}
               <div className="space-y-2">
                 <div className="flex justify-between text-[10px] font-bold uppercase tracking-wider">
-                  <span>Verification Confidence</span>
+                  <span>Tingkat Kepercayaan Analisis</span>
                   <span>{confidencePercent}%</span>
                 </div>
                 <div className="w-full h-1.5 bg-[#D4D4D4] dark:bg-neutral-800 rounded-full overflow-hidden">
@@ -199,7 +199,7 @@ export default function AnalysisDashboard({
             {/* Checklist of Indicators */}
             <div className="bg-white dark:bg-neutral-900 border border-[#D4D4D4] dark:border-neutral-800 rounded-xl p-6 flex-1 flex flex-col justify-between">
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-400 mb-4">Visual Indicators</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-400 mb-4">Indikator Visual</h4>
                 <div className="space-y-3">
                   {possibleIndicators.map((item) => {
                     const isActive = indicators.some(
@@ -231,7 +231,7 @@ export default function AnalysisDashboard({
               {/* Black recommendation alert box */}
               <div className="mt-6">
                 <div className="p-4 rounded bg-[#111111] text-white dark:bg-neutral-950 border dark:border-neutral-800">
-                  <p className="text-[10px] uppercase font-bold tracking-widest mb-1 opacity-60">Recommendation Verdict</p>
+                  <p className="text-[10px] uppercase font-bold tracking-widest mb-1 opacity-60">Analisis dan Rekomendasi</p>
                   <p className="text-[11px] leading-relaxed opacity-95">
                     {getRecommendation()}
                   </p>
@@ -245,7 +245,7 @@ export default function AnalysisDashboard({
 
         {/* Narrative findings */}
         <div className="p-6 bg-white dark:bg-neutral-900 border border-[#D4D4D4] dark:border-neutral-800 rounded-xl mb-6 text-left">
-          <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-400 mb-3">Analysis Findings Breakdown</h4>
+          <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-400 mb-3">Uraian Hasil Analisis</h4>
           <p className="text-sm leading-relaxed text-[#111111] dark:text-neutral-300">
             {analysis}
           </p>
@@ -254,31 +254,31 @@ export default function AnalysisDashboard({
         {/* Technical Data Table */}
         <div className="border-t border-[#D4D4D4] dark:border-neutral-800 pt-6">
           <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-400 mb-3 text-left">
-            Technical Metadata Signature
+            Informasi Metadata 
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-[10px] p-4 rounded-lg bg-[#F8F8F8] dark:bg-neutral-900/50 border border-[#D4D4D4] dark:border-neutral-900 font-mono text-left uppercase tracking-wider">
             <div>
-              <span className="block text-neutral-400 mb-1">Image Resolution</span>
+              <span className="block text-neutral-400 mb-1">Ukuran Gambar</span>
               <span className="text-neutral-900 dark:text-neutral-100 font-bold">{techDetails.resolution}</span>
             </div>
             <div>
-              <span className="block text-neutral-400 mb-1">Aspect Ratio</span>
+              <span className="block text-neutral-400 mb-1">Rasio Aspek</span>
               <span className="text-neutral-900 dark:text-neutral-100 font-bold">{techDetails.aspectRatio}</span>
             </div>
             <div>
-              <span className="block text-neutral-400 mb-1">File Byte Size</span>
+              <span className="block text-neutral-400 mb-1">Ukuran File Byte</span>
               <span className="text-neutral-900 dark:text-neutral-100 font-bold">{techDetails.fileSize}</span>
             </div>
             <div>
-              <span className="block text-neutral-400 mb-1">Format Type</span>
+              <span className="block text-neutral-400 mb-1">Tipe File</span>
               <span className="text-neutral-900 dark:text-neutral-100 font-bold">{techDetails.fileType}</span>
             </div>
             <div>
-              <span className="block text-neutral-400 mb-1">Estimated Noise Pattern</span>
+              <span className="block text-neutral-400 mb-1">Estimasi Pola Noise</span>
               <span className="text-neutral-900 dark:text-neutral-100 font-bold">{techDetails.estimatedNoise}</span>
             </div>
             <div>
-              <span className="block text-neutral-400 mb-1">Authentic EXIF Headers</span>
+              <span className="block text-neutral-400 mb-1">Keaslian Exif</span>
               <span className="text-neutral-900 dark:text-neutral-100 font-bold">{techDetails.metadataFound}</span>
             </div>
           </div>
@@ -288,7 +288,7 @@ export default function AnalysisDashboard({
 
       {/* Printable Report Footer info */}
       <div className="hidden print:block text-center text-[10px] text-neutral-400 font-mono border-t border-neutral-200 pt-6">
-        SeeMe Visual Forensics Pipeline | Secured Sandbox Verification Report.
+        SeeMe Platform Pendeteksi Gambar | Laporan Verifikasi Keaslian Gambar.
       </div>
     </motion.div>
   );
