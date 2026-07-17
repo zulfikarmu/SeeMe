@@ -25,8 +25,8 @@ import ToastContainer from "./components/ToastContainer";
 import { ActiveTab, HistoryItem, ToastMessage, DetectionResult } from "./types";
 
 // Standard sample image URLs for immediate testing
-const SAMPLE_HUMAN_IMAGE = "./image/lombok.jpeg";
-const SAMPLE_AI_IMAGE = "./image/Pantai_Gemini.jpg";
+const SAMPLE_HUMAN_IMAGE = "/image/lombok.jpeg";
+const SAMPLE_AI_IMAGE = "/image/Pantai_Gemini.jpg";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>("home");
@@ -403,7 +403,7 @@ export default function App() {
                     <div className="aspect-video w-full bg-neutral-900 flex items-center justify-center relative overflow-hidden">
                       <img src={SAMPLE_AI_IMAGE} alt="Image-2 (AI)" className="w-full h-full object-cover opacity-80 group-hover:scale-102 transition-transform duration-500" />
                       <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur text-white px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider rounded-sm">
-                        Gambar Uji Coba
+                        Gambar AI
                       </div>
                     </div>
                     <div className="p-5 flex items-center justify-between">
