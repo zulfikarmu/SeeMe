@@ -1,7 +1,7 @@
 import { Menu, X, Sun, Moon, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { ActiveTab } from "../types";
-import LogoIcon from "../Image/Logo.svg";
+import LogoIcon from "/Image/Logo.svg";
 
 interface NavbarProps {
   activeTab: ActiveTab;
@@ -24,7 +24,7 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode 
     <nav className="sticky top-0 z-40 w-full border-b border-[#D4D4D4] bg-white/95 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-950/95 transition-colors duration-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          
+
           {/* Logo Section */}
           <div className="flex items-center gap-3">
             <button
@@ -54,11 +54,10 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode 
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
-                  className={`relative px-1 py-1.5 text-xs font-medium uppercase tracking-widest transition-all duration-200 ${
-                    activeTab === item.id
+                  className={`relative px-1 py-1.5 text-xs font-medium uppercase tracking-widest transition-all duration-200 ${activeTab === item.id
                       ? "text-[#111111] dark:text-white font-bold"
                       : "text-[#404040] hover:text-[#111111] dark:text-neutral-400 dark:hover:text-white"
-                  }`}
+                    }`}
                 >
                   {item.label}
                   {activeTab === item.id && (
@@ -70,7 +69,7 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode 
 
             {/* Dark Mode Toggle */}
             <div className="h-4 w-[1px] bg-[#D4D4D4] dark:bg-neutral-800" />
-            
+
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-1.5 rounded border border-[#D4D4D4] dark:border-neutral-800 hover:bg-[#F5F5F5] dark:hover:bg-neutral-900 text-[#404040] dark:text-neutral-400 hover:text-[#111111] dark:hover:text-white transition-all focus:outline-none"
@@ -108,11 +107,10 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode 
                 setActiveTab(item.id);
                 setMobileMenuOpen(false);
               }}
-              className={`block w-full text-left px-4 py-2.5 text-base font-medium rounded-md transition-colors ${
-                activeTab === item.id
+              className={`block w-full text-left px-4 py-2.5 text-base font-medium rounded-md transition-colors ${activeTab === item.id
                   ? "bg-neutral-100 dark:bg-neutral-900 text-neutral-950 dark:text-neutral-50"
                   : "text-neutral-500 dark:text-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-900/50 hover:text-neutral-950 dark:hover:text-neutral-50"
-              }`}
+                }`}
             >
               {item.label}
             </button>
