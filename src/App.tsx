@@ -224,10 +224,10 @@ export default function App() {
       const payload = {
         base64: SAMPLE_AI_IMAGE,
         fileName: "Image-2 (Pantai - AI)",
-        fileSize: "1.2 MB",
+        fileSize: "131.31 KB",
         fileType: "JPEG",
-        resolution: "1024 × 1024 px",
-        aspectRatio: "1:1",
+        resolution: "1024 × 559 px",
+        aspectRatio: "16:9",
       };
       setSelectedImage(payload);
       setAnalysisResult({
@@ -242,10 +242,10 @@ export default function App() {
       const payload = {
         base64: SAMPLE_HUMAN_IMAGE,
         fileName: "Image-1 (Lombok)",
-        fileSize: "4.5 MB",
+        fileSize: "72.84 KB",
         fileType: "JPEG",
-        resolution: "402 × 600 px",
-        aspectRatio: "2:3",
+        resolution: "960 × 540 px",
+        aspectRatio: "16:9",
       };
       setSelectedImage(payload);
       setAnalysisResult({
