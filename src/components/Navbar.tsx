@@ -1,7 +1,6 @@
 import { Menu, X, Sun, Moon, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { ActiveTab } from "../types";
-import LogoIcon from "@/Image/Logo.svg";
 
 interface NavbarProps {
   activeTab: ActiveTab;
@@ -32,7 +31,7 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode 
               className="flex items-center gap-2.5 group text-left focus:outline-none"
             >
               <img
-                src={LogoIcon}
+                src="/image/logo.svg"
                 alt="SeeMe Logo"
                 className="w-13 h-13 object-contain transition-all group-hover:scale-105 duration-300"
               />
