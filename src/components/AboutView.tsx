@@ -25,8 +25,8 @@ export default function AboutView() {
     },
     {
       icon: <Sparkles className="h-4 w-4 text-[#111111] dark:text-neutral-50" />,
-      title: "Gemini Vision",
-      description: "Memanfaatkan kemampuan kognisi model visual Gemini untuk memeriksa kejanggalan semantik seperti distorsi anatomi fisik, pencahayaan bayangan abnormal, dan inkonsistensi geometri optik.",
+      title: "Reverse AI",
+      description: "Memanfaatkan kemampuan Gemini dalam melakukan reverse image untuk memeriksa kejanggalan semantik seperti distorsi anatomi fisik, pencahayaan bayangan abnormal, dan inkonsistensi geometri optik.",
     },
   ];
 

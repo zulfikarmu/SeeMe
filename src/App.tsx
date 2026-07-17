@@ -339,9 +339,9 @@ export default function App() {
                   <div className="flex justify-around items-center py-6 gap-4">
                     <div className="flex flex-col items-center">
                       <div className="h-16 w-16 rounded bg-white dark:bg-neutral-900 border border-[#D4D4D4] flex items-center justify-center shadow-sm">
-                        <span className="text-xs font-mono font-bold">GEMINI</span>
+                        <span className="text-xs font-mono font-bold">Reverse</span>
                       </div>
-                      <span className="text-[9px] text-[#404040] font-bold uppercase tracking-wider mt-2">Gemini Vision</span>
+                      <span className="text-[9px] text-[#404040] font-bold uppercase tracking-wider mt-2">Reverse AI</span>
                     </div>
                     <div className="flex flex-col items-center">
                       <div className="h-16 w-16 rounded bg-white dark:bg-neutral-900 border border-dashed border-[#D4D4D4] flex items-center justify-center">
@@ -352,7 +352,7 @@ export default function App() {
                   </div>
 
                   <p className="text-[10px] leading-relaxed text-[#404040] dark:text-neutral-500 font-mono bg-white dark:bg-neutral-900/50 p-4 rounded border border-[#D4D4D4] dark:border-neutral-900 mt-4 uppercase tracking-wider">
-                    SeeMe menggunakan Gemini Vision untuk mendeteksi keaslian gambar berdasarkan anomali pada pencahayaan dan ketidakkonsistenan pada piksel gambar.
+                    SeeMe menggunakan metode Reverse AI dengan model Gemini untuk mendeteksi keaslian gambar berdasarkan anomali pada pencahayaan dan ketidakkonsistenan pada piksel gambar.
                   </p>
                 </div>
               </div>
