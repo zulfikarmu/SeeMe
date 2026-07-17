@@ -26,7 +26,7 @@ import { ActiveTab, HistoryItem, ToastMessage, DetectionResult } from "./types";
 
 // Standard sample image URLs for immediate testing
 const SAMPLE_HUMAN_IMAGE = "/image/lombok.jpeg";
-const SAMPLE_AI_IMAGE = "/image/Pantai_Gemini.jpg";
+const SAMPLE_AI_IMAGE = "/image/pantai_ai.jpg";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>("home");
