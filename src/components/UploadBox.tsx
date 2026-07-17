@@ -246,7 +246,7 @@ export default function UploadBox({ onImageSelected, isLoading }: UploadBoxProps
             <ShieldCheck className="h-5 w-5 text-white/80 shrink-0 mt-0.5" />
             <div>
               <p className="font-bold uppercase tracking-widest text-[10px] mb-1 opacity-60">Tersimpan Secara Lokal</p>
-              <p className="leading-relaxed opacity-95 text-[11px]">metadata ini dijalankan secara aman di dalam browser klien Anda. Siap untuk analisis forensik.</p>
+              <p className="leading-relaxed opacity-95 text-[11px]">Metadata ini dijalankan secara aman di dalam browser Anda. Siap untuk analisis forensik?</p>
             </div>
           </div>
         </motion.div>

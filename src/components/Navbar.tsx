@@ -14,10 +14,10 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: "home" as ActiveTab, label: "Utama" },
+    { id: "home" as ActiveTab, label: "Beranda" },
     { id: "analyze" as ActiveTab, label: "Analisis" },
     { id: "history" as ActiveTab, label: "Riwayat" },
-    { id: "about" as ActiveTab, label: "Tentang" },
+    { id: "about" as ActiveTab, label: "Cara Kerja" },
   ];
 
   return (
@@ -41,7 +41,7 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode 
                   SeeMe
                 </span>
                 <span className="block text-[9px] uppercase tracking-widest text-[#404040] dark:text-neutral-400 mt-1">
-                  Melihat Lebih Jauh
+                  Melihat Lebih Dalam
                 </span>
               </div>
             </button>

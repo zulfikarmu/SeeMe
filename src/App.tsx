@@ -297,11 +297,11 @@ export default function App() {
                       SeeMe.
                     </h1>
                     <p className="text-xs uppercase tracking-widest text-[#404040] dark:text-neutral-400 font-bold mt-2">
-                      Melihat Lebih Jauh
+                      Melihat Lebih Dalam
                     </p>
                   </div>
                   <p className="text-xs leading-relaxed text-neutral-500 dark:text-neutral-400 max-w-md">
-                    SeeMe merupakan website pendeteksi keaslian sebuah gambar. Tugas utama SeeMe adalah memastikan bahwa gambar yang diunggah bukan dibuat atau diedit oleh Artificial Intelegence.
+                    SeeMe merupakan website pendeteksi keaslian sebuah gambar berbasis kecerdasan buatan (Artificial Intelligence). Tugas utama SeeMe adalah memastikan bahwa gambar yang diunggah bukan hasil edit dan atau buatan Artificial Intelegence.
                   </p>
                   <div className="pt-2 flex flex-wrap gap-4">
                     <button
@@ -318,7 +318,7 @@ export default function App() {
                       onClick={() => setActiveTab("about")}
                       className="inline-flex items-center gap-2 px-6 py-3.5 border border-[#D4D4D4] dark:border-neutral-800 bg-white dark:bg-neutral-900 text-[#111111] dark:text-neutral-100 text-xs font-bold uppercase tracking-widest rounded hover:bg-[#F5F5F5] dark:hover:bg-neutral-850/50 transition-colors"
                     >
-                      <span>Metodologi</span>
+                      <span>Cara Kerja</span>
                     </button>
                   </div>
                 </div>
@@ -361,7 +361,7 @@ export default function App() {
               <div className="border-t border-[#D4D4D4] dark:border-neutral-850 pt-16">
                 <div className="text-left max-w-xl mb-10">
                   <h3 className="text-lg font-bold uppercase tracking-wider text-[#111111] dark:text-white">
-                    Demonstrasi SeeMe
+                    Mulai Analisis?
                   </h3>
                   <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1.5 leading-relaxed">
                     Tidak memiliki file gambar untuk uji coba? Klik salah satu contoh gambar di bawah ini untuk melihat simulasi laporan analisis secara instan.
@@ -456,13 +456,13 @@ export default function App() {
                       {/* Active Upload Box */}
                       <div className="text-left max-w-xl">
                         <span className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-500 block mb-1">
-                          Deteksi Gambar Anda
+                          Analisis Gambar Anda
                         </span>
                         <h2 className="text-2xl font-bold text-[#111111] dark:text-white uppercase tracking-tight">
                           Unggah Gambar
                         </h2>
                         <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1.5 leading-relaxed">
-                          Gunakan file gambar berformat JPG, PNG, atau WEBP hingga 20MB. Gambar Anda akan melalui pemeriksaan mikrotekstur dan metadata untuk mendeteksi tanda rekayasa AI.
+                          Gunakan file berformat JPG, PNG, atau WEBP hingga 20MB. Gambar Anda akan melalui pemeriksaan mikrotekstur dan metadata untuk mendeteksi tanda rekayasa AI.
                         </p>
                       </div>
 
@@ -505,13 +505,13 @@ export default function App() {
                             onClick={handleReset}
                             className="px-5 py-2.5 border border-[#D4D4D4] dark:border-neutral-800 text-[#111111] dark:text-neutral-200 text-xs font-bold uppercase tracking-widest rounded hover:bg-[#F5F5F5] dark:hover:bg-neutral-900 transition-colors"
                           >
-                            Ubah Gambar
+                            Ganti Gambar
                           </button>
                           <button
                             onClick={handleAnalyze}
                             className="px-6 py-2.5 bg-[#111111] hover:bg-neutral-800 dark:bg-white dark:hover:bg-neutral-200 text-white dark:text-black text-xs font-bold uppercase tracking-widest rounded transition-all hover:y-[-1px] shadow"
                           >
-                            Analisis Gambar
+                            Analisis Sekarang
                           </button>
                         </div>
                       )}
@@ -544,7 +544,7 @@ export default function App() {
             >
               <div className="mb-6">
                 <span className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-500 block mb-1">
-                  Riwayat Analisis Gambar
+                  Hasil Analisis Sebelumnya
                 </span>
                 <h2 className="text-2xl font-bold text-[#111111] dark:text-white uppercase tracking-tight">
                   Seluruh Riwayat Analisis

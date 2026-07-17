@@ -40,10 +40,10 @@ export default function AboutView() {
       {/* Editorial Header */}
       <div className="text-center max-w-2xl mx-auto mb-16">
         <span className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-500 block mb-2">
-          Metode Analisis
+          CARA KERJA SeeMe
         </span>
         <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] dark:text-white tracking-tight mb-4">
-          Cara Kerja SeeMe
+          Bagaimana SeeMe membantumu?
         </h2>
         <p className="text-neutral-500 dark:text-neutral-400 leading-relaxed text-xs sm:text-sm">
           SeeMe menganalisis berbagai indikator visual untuk mengidentifikasi struktur piksel buatan, penghalusan sintetik, dan artefak tekstur yang sering ditemukan pada model difusi dan AI generatif.

@@ -98,10 +98,10 @@ export default function AnalysisDashboard({
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 print:hidden">
         <div>
           <span className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-500 block mb-1">
-            Laporan Analisis  
+            Hasil Analisis  
           </span>
           <h2 className="text-2xl sm:text-3xl font-bold text-[#111111] dark:text-neutral-50 tracking-tight">
-            Hasil Analisis
+            Laporan Gambar Anda
           </h2>
         </div>
         <div className="flex flex-wrap gap-3">
@@ -202,9 +202,16 @@ export default function AnalysisDashboard({
                 <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#404040] dark:text-neutral-400 mb-4">Indikator Visual</h4>
                 <div className="space-y-3">
                   {possibleIndicators.map((item) => {
-                    const isActive = indicators.some(
-                      (ind) => ind.toLowerCase().includes(item.key.toLowerCase()) || item.key.toLowerCase().includes(ind.toLowerCase())
-                    );
+                    const isActive = indicators.some((ind) => {
+                      const lower = ind.toLowerCase();
+                      const k = item.key.toLowerCase();
+                      if (k.includes("metadata")) return lower.includes("metadata");
+                      if (k.includes("sdxl")) return lower.includes("sdxl");
+                      if (k.includes("frequen") || k.includes("frekuensi")) return lower.includes("frequen") || lower.includes("frekuensi");
+                      if (k.includes("compress") || k.includes("kompresi")) return lower.includes("compress") || lower.includes("kompresi");
+                      if (k.includes("gemini")) return lower.includes("gemini");
+                      return lower.includes(k) || k.includes(lower);
+                    });
                     return (
                       <div key={item.key} className="flex items-center justify-between text-xs py-2 border-b border-[#F0F0F0] dark:border-neutral-850">
                         <div className="flex items-center gap-3">
