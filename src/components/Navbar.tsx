@@ -1,7 +1,7 @@
 import { Menu, X, Sun, Moon, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { ActiveTab } from "../types";
-import LogoIcon from "/image/logo.svg";
+import LogoIcon from "@/Image/Logo.svg";
 
 interface NavbarProps {
   activeTab: ActiveTab;
